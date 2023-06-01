@@ -14,11 +14,13 @@ class RegistrationActivity : AppCompatActivity() {
         binding = ActivityRegistrationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        if (Prefs)
+
         binding.registerButton.setOnClickListener {
 
-            val username = binding.loginEditText.text.toString()
-            val password = binding.passwordEditText.text.toString()
-            val confirmPassword = binding.confirmPasswordEditText.text.toString()
+            val username = binding.loginEditText.text.toString().trim()
+            val password = binding.passwordEditText.text.toString().trim()
+            val confirmPassword = binding.confirmPasswordEditText.text.toString().trim()
 
             if (username.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
                 if (password == confirmPassword) {
@@ -28,6 +30,7 @@ class RegistrationActivity : AppCompatActivity() {
 
                     Toast.makeText(this, "Ro'yhatdan o'tish muvaffaqiyatli amalga oshirildi", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, MainActivity::class.java))
+                    finish()
                 } else {
                     Toast.makeText(this, "Parol va parolni tasdiqlash mos kelmaydi", Toast.LENGTH_SHORT).show()
                 }

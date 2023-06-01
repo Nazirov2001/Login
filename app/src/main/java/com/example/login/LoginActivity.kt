@@ -26,8 +26,9 @@ class LoginActivity : AppCompatActivity() {
 
         binding.loginButton.setOnClickListener {
 
-            val username = binding.loginEditText.text.toString().trim().replace("(", "").replace(")", "").replace("\\s".toRegex(), "")
-            val password = binding.passwordEditText.text.toString().trim().replace("(", "").replace(")", "").replace("\\s".toRegex(), "")
+            val username = binding.loginEditText.text.toString().trim()
+            val password = binding.passwordEditText.text.toString().trim()
+
 
             if (username.isNotEmpty() && password.isNotEmpty()) {
                 loggedInUser = Prefs.getUser()?.find { it.login == username && it.parol == password }
@@ -36,6 +37,7 @@ class LoginActivity : AppCompatActivity() {
                     intent.putExtra("login", username)
                     val registrationIntent = Intent(this, MainActivity::class.java)
                     startActivity(registrationIntent)
+                    finish()
                 } else {
                     Toast.makeText(this, "Login yoki Parol xato !!!", Toast.LENGTH_SHORT).show()
                 }
@@ -46,6 +48,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.registrationButton.setOnClickListener {
             startActivity(Intent(this, RegistrationActivity::class.java))
+            finish()
         }
     }
 }

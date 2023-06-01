@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.back.setOnClickListener{
             startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
 
         // Retrieve the user from Prefs
