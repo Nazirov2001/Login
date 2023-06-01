@@ -1,19 +1,19 @@
 package com.example.login
 
 import android.content.Intent
-import com.example.login.databinding.ActivityLoginBinding
+import com.example.login.databinding.ActivitySignBinding
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class LoginActivity : AppCompatActivity() {
+class SignActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLoginBinding
+    private lateinit var binding: ActivitySignBinding
     private var loggedInUser: UserInfoModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
+        binding = ActivitySignBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val list = listOf(

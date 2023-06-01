@@ -1,6 +1,5 @@
 package com.example.login
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.back.setOnClickListener{
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, SignActivity::class.java))
             finish()
         }
 
