@@ -14,7 +14,6 @@ class RegistrationActivity : AppCompatActivity() {
         binding = ActivityRegistrationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if (Prefs)
 
         binding.registerButton.setOnClickListener {
 
