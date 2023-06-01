@@ -7,9 +7,6 @@
     android:background="#80FFFFFF"
     android:gravity="center">
 
-
-
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,14 +71,14 @@
             android:layout_height="wrap_content"
             android:layout_margin="24dp"
             android:layout_marginTop="32dp"
-            android:text="Login" />
+            android:text="Tizimga kirish" />
 
         <!-- Registiratsiya yozuvi -->
         <TextView
             android:id="@+id/registrationButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Registiratsiya" />
+            android:text="Roʻyxatdan oʻtish" />
 
     </LinearLayout>
 
