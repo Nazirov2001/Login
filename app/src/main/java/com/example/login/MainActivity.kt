@@ -1,6 +1,7 @@
 package com.example.login
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.login.databinding.ActivityMainBinding
@@ -13,6 +14,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.back.setOnClickListener{
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
 
         // Retrieve the user from Prefs
         val userList = Prefs.getUser()

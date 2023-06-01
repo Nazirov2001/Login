@@ -26,8 +26,8 @@ class LoginActivity : AppCompatActivity() {
 
         binding.loginButton.setOnClickListener {
 
-            val username = binding.loginEditText.text.toString()
-            val password = binding.passwordEditText.text.toString()
+            val username = binding.loginEditText.text.toString().trim().replace("(", "").replace(")", "").replace("\\s".toRegex(), "")
+            val password = binding.passwordEditText.text.toString().trim().replace("(", "").replace(")", "").replace("\\s".toRegex(), "")
 
             if (username.isNotEmpty() && password.isNotEmpty()) {
                 loggedInUser = Prefs.getUser()?.find { it.login == username && it.parol == password }
