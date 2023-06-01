@@ -1,5 +1,7 @@
-package com.example.login
+package com.example.login.utils
 
+import com.example.login.App
+import com.example.login.model.UserInfoModel
 import com.orhanobut.hawk.Hawk
 
 const val PREF_USER_SETTINGS = "pref_user_settings"

@@ -1,10 +1,13 @@
-package com.example.login
+package com.example.login.auth
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.login.databinding.ActivityRegistrationBinding
 import android.content.Intent
 import android.widget.Toast
+import com.example.login.model.UserInfoModel
+import com.example.login.main.MainActivity
+import com.example.login.utils.Prefs
 
 class RegistrationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegistrationBinding
@@ -27,14 +30,23 @@ class RegistrationActivity : AppCompatActivity() {
                     Prefs.setUser(UserInfoModel(username, password))
                     intent.putExtra("login", username)
 
-                    Toast.makeText(this, "Ro'yhatdan o'tish muvaffaqiyatli amalga oshirildi", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this,
+                        "Ro'yhatdan o'tish muvaffaqiyatli amalga oshirildi",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
                 } else {
-                    Toast.makeText(this, "Parol va parolni tasdiqlash mos kelmaydi", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this,
+                        "Parol va parolni tasdiqlash mos kelmaydi",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             } else {
-                Toast.makeText(this, "Iltimos, barcha maydonlarni to'ldiring", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Iltimos, barcha maydonlarni to'ldiring", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
 

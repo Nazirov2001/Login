@@ -1,10 +1,13 @@
-package com.example.login
+package com.example.login.auth
 
 import android.content.Intent
 import com.example.login.databinding.ActivitySignBinding
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.login.model.UserInfoModel
+import com.example.login.main.MainActivity
+import com.example.login.utils.Prefs
 
 class SignActivity : AppCompatActivity() {
 
@@ -31,7 +34,8 @@ class SignActivity : AppCompatActivity() {
 
 
             if (username.isNotEmpty() && password.isNotEmpty()) {
-                loggedInUser = Prefs.getUser()?.find { it.login == username && it.parol == password }
+                loggedInUser =
+                    Prefs.getUser()?.find { it.login == username && it.parol == password }
                 if (loggedInUser != null) {
                     Prefs.setUser(UserInfoModel(username, password))
                     intent.putExtra("login", username)
@@ -42,7 +46,11 @@ class SignActivity : AppCompatActivity() {
                     Toast.makeText(this, "Login yoki Parol xato !!!", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                Toast.makeText(this, "Hammasini to'ldiring !!!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "Iltimos, barcha maydonlarni to'ldiring !!!",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
